@@ -1,4 +1,4 @@
-# miharix-wifi-rc
+# Miharix WiFi RC
 **[SLO]**
 
 Vezje in programski primeri za izdelavo super poceni RV preko WiFi (pametni telefon,tablica,...)
@@ -13,8 +13,8 @@ Kaj se nahaja v mapah:
 **Za  izdelavo še potrebujete:**
 * 1x ESP-12E *(ESP8266)*
 * 1x MCP155ST-3302E 3,3V 300mA
-* 2x 10K (10 kilo ohm)
-* 2x 1µF (1 mikro Farad)
+* 2x 10K SMD805 (10 kilo ohm)
+* 2x 1µF SMD805 (1 mikro Farad)
 * opcijsko 3-44 letev moška enoredna lomljiva raster 2,54mm
 
 Za preprosto programiranje predvidena uporaba "Witty cloud"
@@ -38,8 +38,8 @@ What is in the folders:
 **For building you also need:**
 * 1x ESP-12E *(ESP8266)*
 * 1x MCP155ST-3302E 3,3V 300mA
-* 2x 10K (10 kilo ohm)
-* 2x 1µF (1 mikro Farad)
+* 2x 10K SMD805 (10 kilo ohm)
+* 2x 1µF SMD805 (1 mikro Farad)
 * optional 3-44 pin header male one line breakable raster 2,54mm
 
 For easy programming use "Witty cloud"
