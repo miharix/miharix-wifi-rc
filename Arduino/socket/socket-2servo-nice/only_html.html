@@ -1,0 +1,87 @@
+<!--http://twiggle-web-design.com/tutorials/Custom-Vertical-Input-Range-CSS3.html-->
+<html><head><title>Miharix WiFi RC</title>
+    <script>var connection = new WebSocket('ws://'+location.hostname+':81/', ['arduino']);connection.onopen = function () {  connection.send('Connect ' + new Date()); }; connection.onerror = function (error) {    console.log('WebSocket Error ', error);};connection.onmessage = function (e) {  console.log('Server: ', e.data);};function sendServo() {  var g = parseInt(document.getElementById('g').value).toString(16);  var s = parseInt(document.getElementById('s').value).toString(16);  if(g.length < 2) { g = '0' + g; }   if(s.length < 2) { s = '0' + s; }    var rgb = '#'+s+g;    console.log('RGB: ' + rgb); connection.send(rgb); }</script>
+
+
+    <style>
+    html { background-color: #FFeaea; color: #555; height: 100%; padding: 0px; margin: 0px; overflow:hidden; text-align:center;}
+    body { font-family: Arial, Calibri; width: 100%; margin: 0px; background-color: Black; padding: 0px; height: 100%;}    
+		
+	input[type='range'].range {
+		position: fixed;
+		cursor: grabbing;
+		width: 50% !important;
+		-webkit-appearance: none;
+		width:50%;
+		border: 0px;
+		background-color: #e6e6e6;
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#d2d2d2));
+		background-image: -webkit-linear-gradient(right, #222222, #AAAAAA,#222222);
+		background-image: -moz-linear-gradient(right, #222222, #AAAAAA,#222222);
+		background-image: -ms-linear-gradient(right, #222222, #AAAAAA,#222222);
+		background-image: -o-linear-gradient(right, #222222, #AAAAAA,#222222);
+	}
+		
+	input[type='range'].range:focus{
+		border: 0 !imporant; outline: none !important;
+	}
+
+	input[type='range'].range::-webkit-slider-thumb  {
+		-webkit-appearance: none;
+		width: 100px;
+		height: 100px; background-color: #555;
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4DFFFF), to(#00CCFF));
+		background-image: -webkit-linear-gradient(right,#000000, #00cc00,#00cc00,#000000);
+		background-image: -moz-linear-gradient(right,#000000, #00cc00,#00cc00,#000000);
+		background-image: -ms-linear-gradient(right,#000000, #00cc00,#00cc00,#000000);
+		background-image: -o-linear-gradient(right,#000000, #00cc00,#00cc00,#000000);
+	}
+		
+	input[type='range'].round {
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+	}
+		
+	input[type='range'].round::-webkit-slider-thumb  {
+		-webkit-border-radius: 20px;	-moz-border-radius: 20px; -o-border-radius: 20px;
+	}
+		
+	.horizontal-lowest-first
+	{   
+		-webkit-transform:rotate(0deg);       
+		-moz-transform:rotate(0deg);
+		-o-transform:rotate(0deg);
+		-ms-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+				
+	.vertical-heighest-first
+	{
+		-webkit-transform:rotate(270deg);       
+		-moz-transform:rotate(270deg);
+		-o-transform:rotate(270deg);
+		-ms-transform:rotate(270deg);
+		transform:rotate(270deg);
+	}
+	
+	.servo1
+	{
+	top: 40%;
+	left: 2%;
+	}
+	.servo2{
+	top: 40%;
+	left: 55%;
+	}
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+</head>
+<body>
+Miharix WiFi RC
+<input id='s' class='range horizontal-lowest-first round servo1' type='range' oninput='sendServo();' min='0' max='180' step='1' value='90' >
+
+<input id='g' class='range vertical-heighest-first round servo2' type='range' oninput='sendServo();' min='0' max='180' step='1' value='90'  >	
+</body>
+</html>
