@@ -3,6 +3,8 @@
 
 Vezje in programski primeri za izdelavo super poceni RV preko WiFi (pametni telefon,tablica,...)
 
+V kolikor vam vezje koristi, lahko podprete razvoj tega ter bodočih projektov s donacijo preko: https://paypal.me/miharix
+
 Kaj se nahaja v mapah:
 * **Arduino** - *programski primeri za programiranje modula*
 * **DIY** - *pdf za izdelavo tiskanega vezja v domači delavnici*
@@ -19,13 +21,15 @@ Kaj se nahaja v mapah:
 
 Za preprosto programiranje predvidena uporaba "Witty cloud"
 
-**Datoteke za V3, bodo na vodljo predvidoma okog 20. 8. 2017**
+**Datoteke za V3, bodo na voljo predvidoma okog 30. 8. 2017**
 
 ---
 
 **[ENG]**
 
 PCB and Example Software for making super cheap RC control over WiFi (mobile phone,tablet,...)
+
+If you like this project, you are welcome to support this and my further projects over https://paypal.me/miharix
 
 What is in the folders:
 
@@ -44,4 +48,4 @@ What is in the folders:
 
 For easy programming use "Witty cloud"
 
-**Files for V3 are planed to be available around 20.08.2017**
+**Files for V3 are planed to be available around 30.08.2017**
