@@ -23,11 +23,6 @@ Kaj se nahaja v mapah:
 
 Za preprosto programiranje predvidena uporaba "Witty cloud"
 
-<<<<<<< HEAD
-=======
-**Datoteke za V3, bodo na voljo predvidoma okog 30. 8. 2017**
-
->>>>>>> 94f3e22ac3f814cc87cf0cd928412b1086963697
 ---
 
 **[ENG]**
@@ -52,8 +47,3 @@ What is in the folders:
 * optional 3-44 pin header male one line breakable raster 2,54mm
 
 For easy programming use "Witty cloud"
-
-<<<<<<< HEAD
-=======
-**Files for V3 are planed to be available around 30.08.2017**
->>>>>>> 94f3e22ac3f814cc87cf0cd928412b1086963697
