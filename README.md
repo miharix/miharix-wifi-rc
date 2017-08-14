@@ -19,8 +19,6 @@ Kaj se nahaja v mapah:
 
 Za preprosto programiranje predvidena uporaba "Witty cloud"
 
-**Datoteke za V3, bodo na vodljo predvidoma okog 20. 8. 2017**
-
 ---
 
 **[ENG]**
@@ -44,4 +42,3 @@ What is in the folders:
 
 For easy programming use "Witty cloud"
 
-**Files for V3 are planed to be available around 20.08.2017**
