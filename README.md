@@ -1,7 +1,11 @@
 # Miharix WiFi RC
+[![Alt text](https://img.youtube.com/vi/RT00wBG8huE/0.jpg)](https://www.youtube.com/watch?v=RT00wBG8huE)
+
 **[SLO]**
 
 Vezje in programski primeri za izdelavo super poceni RV preko WiFi (pametni telefon,tablica,...)
+
+V kolikor vam vezje koristi, lahko podprete razvoj tega ter bodočih projektov s donacijo preko: https://paypal.me/miharix
 
 Kaj se nahaja v mapah:
 * **Arduino** - *programski primeri za programiranje modula*
@@ -19,11 +23,18 @@ Kaj se nahaja v mapah:
 
 Za preprosto programiranje predvidena uporaba "Witty cloud"
 
+<<<<<<< HEAD
+=======
+**Datoteke za V3, bodo na voljo predvidoma okog 30. 8. 2017**
+
+>>>>>>> 94f3e22ac3f814cc87cf0cd928412b1086963697
 ---
 
 **[ENG]**
 
 PCB and Example Software for making super cheap RC control over WiFi (mobile phone,tablet,...)
+
+If you like this project, you are welcome to support this and my further projects over https://paypal.me/miharix
 
 What is in the folders:
 
@@ -42,3 +53,7 @@ What is in the folders:
 
 For easy programming use "Witty cloud"
 
+<<<<<<< HEAD
+=======
+**Files for V3 are planed to be available around 30.08.2017**
+>>>>>>> 94f3e22ac3f814cc87cf0cd928412b1086963697
