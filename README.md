@@ -8,6 +8,7 @@ Vezje in programski primeri za izdelavo super poceni RV preko WiFi (pametni tele
 V kolikor vam vezje koristi, lahko podprete razvoj tega ter bodočih projektov s donacijo preko: https://paypal.me/miharix
 
 Kaj se nahaja v mapah:
+* **3Dp** - preprosto ohišje za 3Dp
 * **Arduino** - *programski primeri za programiranje modula*
 * **DIY** - *pdf za izdelavo tiskanega vezja v domači delavnici*
 * **Documentation** - *shema vezave in mere*
@@ -32,7 +33,7 @@ PCB and Example Software for making super cheap RC control over WiFi (mobile pho
 If you like this project, you are welcome to support this and my further projects over https://paypal.me/miharix
 
 What is in the folders:
-
+* **3Dp** - simple 3Dp case
 * **Arduino** - *source code examples for programming the module*
 * **DIY** - *pdf for making PCB DIY at home*
 * **Documentation** - *shematic and dimensions*
