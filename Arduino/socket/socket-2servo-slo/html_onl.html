@@ -1,0 +1,22 @@
+<html><head>
+<script>
+
+var connection = new WebSocket('ws://'+location.hostname+':81/', ['arduino']);
+connection.onopen = function () {
+  connection.send('Connect ' + new Date());
+  };
+  connection.onerror = function (error) {
+    console.log('WebSocket Error ', error);
+  };
+  connection.onmessage = function (e) {
+    console.log('Server: ', e.data);
+  };
+function sendServo() {
+var g = parseInt(document.getElementById('g').value).toString(16);
+var s = parseInt(document.getElementById('s').value).toString(16);
+if(g.length < 2) { g = '0' + g; }   if(s.length < 2) { s = '0' + s; }
+var rgb = '#'+s+g;    console.log('RGB: ' + rgb); connection.send(rgb); }
+
+
+</script>
+</head><body style=\"margin: 0px; padding:0px; background-color:#000000; color:#AAAAAA; \" ><center><font size=\"6\"><b>Tramontana</b></font><br><font size=\"4\">Tabor ZOTKS - poletje 2017</font></center><input type=\"range\" id=\"g\" value=\"90\" min=\"0\" max=\"180\" step=\"1\" oninput=\"sendServo();\" orient=\"vertical\" style=\"width: 50%; height: 85%; -webkit-appearance: slider-vertical; writing-mode: bt-lr; display: inline; margin: 0px; padding:0px; \"><input type=\"range\" id=\"s\" value=\"90\" min=\"0\" max=\"180\" step=\"1\" oninput=\"sendServo();\" orient=\"horizontal\" style=\"width: 50%; height: 85%; -webkit-appearance: slider-horizontal; writing-mode: bt-lr; display: inline; margin: 0px; padding:0px; \"></body></html>

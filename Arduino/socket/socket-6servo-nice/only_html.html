@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset='UTF-8'> 
+ <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'/>
+
+<title>Miharix WiFi RC</title>
+    <script>
+    
+    var Servo1=0;
+    var Servo2=0;
+    var Servo3=0;
+    var Servo4=0;
+    var Servo5=0;
+    var Servo6=0;
+    
+    var connection = new WebSocket('ws://'+location.hostname+':81/', ['arduino']);
+    connection.onopen = function () {
+      connection.send('Connect ' + new Date()); 
+    };
+    connection.onerror = function (error) {
+      console.log('WebSocket Error ', error);
+    };
+    connection.onmessage = function (e) {
+      console.log('Server: ', e.data);
+    };
+    function sendServo(){
+      S1 =parseInt(Servo1).toString(16);
+      S2 =parseInt(Servo2).toString(16);
+      S3 =parseInt(Servo3).toString(16);
+      S4 =parseInt(Servo4).toString(16);
+      
+      var S5 = parseInt(document.getElementById('S5').value).toString(16);
+      var S6 = parseInt(document.getElementById('S6').value).toString(16);
+      
+      if(S1.length < 2) { S1 = '0' + S1; }
+      if(S2.length < 2) { S2 = '0' + S2; }
+      if(S3.length < 2) { S3 = '0' + S3; }
+      if(S4.length < 2) { S4 = '0' + S4; }
+      if(S5.length < 2) { S5 = '0' + S5; }
+      if(S6.length < 2) { S6 = '0' + S6; }
+      
+      var S1_6 = S1+S2+S3+S4+S5+S6;
+    //  console.log('S1_6: ' + S1_6);
+   //   connection.send(S1_6);
+     }
+     
+     </script>
+
+<script src='nipplejs.min.js' charset='utf-8'></script>
+    <style>
+        html, body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+            overflow:hidden;
+        }
+        #leftB {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 80%;
+            width: 50%;
+            background: black;
+        }
+         #leftT {
+            position: absolute;
+            left: 0;
+            top: 80%;
+            height: 20%;
+            width: 50%;
+            background: black;
+        }
+        #rightB {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 80%;
+            width: 50%;
+            background: black;
+        }
+        #rightT {
+            position: absolute;
+            right: 0;
+            top: 80%;
+            height: 20%;
+            width: 50%;
+            background: black;
+        }
+       .button {
+	    display: inline-block;
+	    padding: 0px 0px;
+	    font-size: 100%;
+	    cursor: pointer;
+	    text-align: center;
+	    text-decoration: none;
+	    outline: 0 !important; 
+	    color: #FF4000;
+	    background-color: #004000;
+	    border: none;
+	    border-radius:30px;
+	    position: absolute;
+	    width: 80%;
+	    height: 80%;
+	    top: 10%;
+	    right: 10%;
+	}
+	#RCName {
+	    position: absolute;
+	    pointer-events: none;
+            right: 0;
+            top: 0;
+            height: 16px;
+            width: 100%;
+            background: black;
+            z-index: 1;
+            font-size: 15px;
+            text-align: center;
+            color: #555;
+	}
+	button::-moz-focus-inner {
+	    border: 0;
+	}
+	.button:active {
+	    background-color: #005000;
+	    color: #005000;
+	    transform: translateY(4px);
+	}
+    </style>
+   
+    
+</head>
+
+<body>
+  <div id='RCName'>Miharix WiFi RC</div>
+  <div id='leftT'>
+    <button id='S5' type='button' class='button' value=0 onclick='ButtonS5();'></button> 
+  </div>
+  <div id='rightT'>
+    <button id='S6' type='button' class='button' value=0 onclick='ButtonS6();'></button> 
+  </div>
+  <div id='leftB'></div>
+  <div id='rightB'></div>
+  
+  
+  
+  <script>
+    var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    xs = w.innerWidth || e.clientWidth || g.clientWidth,
+    ys = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    if(xs<ys){xs=ys;};
+    nip_size=xs/4;
+    
+    max_rangeX1=180;
+    min_rangeX1=0;
+    
+    max_rangeY1=180;
+    min_rangeY1=0;
+    
+    max_rangeX2=180;
+    min_rangeX2=0;
+    
+    max_rangeY2=180;
+    min_rangeY2=0;
+
+      var joystickL = nipplejs.create({
+	zone: document.getElementById('leftB'),
+        mode: 'static',
+        position: { left: '50%', top: '50%' },
+        color: 'green',
+        size: nip_size,
+        restOpacity: 1
+      });
+      
+      var joystickR = nipplejs.create({
+	zone: document.getElementById('rightB'),
+        mode: 'static',
+        position: { left: '50%', top: '50%' },
+        color: 'green',
+        size: nip_size,
+        restOpacity: 1
+      });
+
+      joystickL.on('move',function (evt, data){
+	if(((data.angle.degree<90)&&(data.angle.degree>0))||((data.angle.degree<360)&&(data.angle.degree>270))){
+	  X=Math.cos(data.angle.radian)*data.distance;
+	  Y=Math.sin(data.angle.radian)*data.distance;
+	}
+	if(((data.angle.degree<180)&&(data.angle.degree>90))||((data.angle.degree<270)&&(data.angle.degree>180))){
+	  X=-Math.cos(Math.PI-data.angle.radian)*data.distance;
+	  Y=Math.sin(Math.PI-data.angle.radian)*data.distance;
+	}
+	Servo1=((X+nip_size/2)*(max_rangeX1-min_rangeX1)/nip_size+min_rangeX1).toFixed(0);
+	Servo2=((Y+nip_size/2)*(max_rangeY1-min_rangeY1)/nip_size+min_rangeY1).toFixed(0);
+	
+	sendServo();
+	document.getElementById('RCName').innerHTML = Servo1+'<br>'+Servo2+'<br> X:'+ X.toFixed(0)+'<br> Y:'+ Y.toFixed(0)+'<br>a:'+data.angle.radian.toFixed(0)+'<br>D:'+data.distance.toFixed(0)+'<br>cos:'+Math.cos(data.angle.radian);
+      });
+        
+      joystickL.on('end',function (evt, data){
+	Servo1=0;
+	Servo2=0;
+	sendServo();
+	//document.getElementById('RCName').innerHTML = ' X: 0, Y:0 '+x/8;
+      });
+      
+      joystickR.on('move',function (evt, data){
+	if(((data.angle.degree<90)&&(data.angle.degree>0))||((data.angle.degree<360)&&(data.angle.degree>270))){
+	  X=Math.cos(data.angle.radian)*data.distance;
+	  Y=Math.sin(data.angle.radian)*data.distance;
+	}
+	if(((data.angle.degree<180)&&(data.angle.degree>90))||((data.angle.degree<270)&&(data.angle.degree>180))){
+	  X=-Math.cos(Math.PI-data.angle.radian)*data.distance;
+	  Y=Math.sin(Math.PI-data.angle.radian)*data.distance;
+	}
+	Servo3=((X+nip_size/2)*(max_rangeX2-min_rangeX2)/nip_size+min_rangeX2).toFixed(0);
+	Servo4=((Y+nip_size/2)*(max_rangeY2-min_rangeY2)/nip_size+min_rangeY2).toFixed(0);
+	
+	sendServo();
+	//document.getElementById('RCName').innerHTML = Servo3+'<br>'+Servo4+'<br> X:'+ X.toFixed(0)+'<br> Y:'+ Y.toFixed(0)+'<br>a:'+data.angle.radian.toFixed(0)+'<br>D:'+data.distance.toFixed(0)+'<br>cos:'+Math.cos(data.angle.radian);
+      });
+        
+      joystickR.on('end',function (evt, data){
+	Servo3=0;
+	Servo4=0;
+	sendServo();
+	//document.getElementById('RCName').innerHTML = ' X: 0, Y:0 '+x/8;
+      });
+      
+      function ButtonS5(){
+	if(S5.value==0){
+	  S5.value=180;
+	//  S5.innerHTML='ON';
+	  S5.style.backgroundColor='white';
+	}else{
+	  S5.value=0;
+	 // S5.innerHTML='OFF';
+	  S5.style.backgroundColor='#005000';
+	};
+	
+      }
+      
+      function ButtonS6(){
+	if(S6.value==0){
+	  S6.value=180;
+	 // S6.innerHTML='ON';
+	  S6.style.backgroundColor='red';
+	}else{
+	  S6.value=0;
+	 // S6.innerHTML='OFF';
+	  S6.style.backgroundColor='#005000';
+	};
+	
+      }
+      
+  </script>
+  <!--https://github.com/miharix/miharix-wifi-rc/-->
+  <!--nipples https://github.com/yoannmoinet/nipplejs-->
+</body>
+</html>
