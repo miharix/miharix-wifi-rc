@@ -1,7 +1,13 @@
 # Miharix WiFi RC
+[SLO](https://github.com/miharix/miharix-wifi-rc/README.md#slo) / [ENG](https://github.com/miharix/miharix-wifi-rc/README.md#eng)
+
 [![Alt text](https://img.youtube.com/vi/RT00wBG8huE/0.jpg)](https://www.youtube.com/watch?v=RT00wBG8huE)
 
-**[SLO]**
+[![Alt text](https://img.youtube.com/vi/3g94vfjdDN8/0.jpg)](https://www.youtube.com/watch?v=3g94vfjdDN8)
+
+---
+
+[**SLO**](#slo)
 
 Vezje in programski primeri za izdelavo super poceni RV preko WiFi (pametni telefon,tablica,...)
 
@@ -24,9 +30,21 @@ Kaj se nahaja v mapah:
 
 Za preprosto programiranje predvidena uporaba "Witty cloud"
 
+Testiran domet na zemlji približno 80m
+ [(5s preden se avto ustavi na tem posnetku, se je zgubil signal)](https://youtu.be/WoqIe_oOWTM)
+
+Za naredit:
+* Testirat na čim več napravah
+* Test dometa pri uporabi zunanje antene, ruterja...
+* Navodila(video?) kako izdelat, programirat, nastavljat...
+* (6 servo demo)Expo
+* (6 servo demo)Izklop samodejnega povratka ročice poljubne osi v središče
+* (6 servo demo)Sočasno aktivianje gumba za 5&6 med premikanjem ročic
+* ...
+
 ---
 
-**[ENG]**
+[**ENG**](#eng)
 
 PCB and Example Software for making super cheap RC control over WiFi (mobile phone,tablet,...)
 
@@ -48,3 +66,15 @@ What is in the folders:
 * optional 3-44 pin header male one line breakable raster 2,54mm
 
 For easy programming use "Witty cloud"
+
+Ground range test cca 90m
+[(5s before car stops, the signal is lost)](https://youtu.be/WoqIe_oOWTM)
+
+Todo List:
+* Testing on more devices
+* Range test using external antena, router...
+* Manual(video?) how to build, programming, configure...
+* (6 servo demo)Expo
+* (6 servo demo)Disable nipple retun to center for individual axes 
+* (6 servo demo)Simultan button(channel 5&6) press and nipple usage
+* ...

@@ -29,7 +29,7 @@ const char *ssid = "miharix_WiFi_RC";
 const char *password = "mihamiha";
 
 uint32_t failsaveS=5; //seconds whithout new input till failsave
-const uint8_t failSaveServo1 = 40; //failsave position 0-180
+const uint8_t failSaveServo1 = 90; //failsave position 0-180
 const uint8_t failSaveServo2 = 90;
 const uint8_t failSaveServo3 = 90;
 const uint8_t failSaveServo4 = 90;
@@ -250,8 +250,8 @@ const char skripta[] PROGMEM = "<!DOCTYPE html>"
       "});"
         
       "joystickL.on('end',function (evt, data){"
-  "Servo1=0;"
-  "Servo2=0;"
+  "Servo1=90;"
+  "Servo2=90;"
   "sendServo();"
   //document.getElementById('RCName').innerHTML = ' X: 0, Y:0 '+x/8;
       "});"
@@ -273,8 +273,8 @@ const char skripta[] PROGMEM = "<!DOCTYPE html>"
       "});"
         
       "joystickR.on('end',function (evt, data){"
-  "Servo3=0;"
-  "Servo4=0;"
+  "Servo3=90;"
+  "Servo4=90;"
   "sendServo();"
   //document.getElementById('RCName').innerHTML = ' X: 0, Y:0 '+x/8;
       "});"
