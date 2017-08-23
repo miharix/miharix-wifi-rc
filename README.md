@@ -1,5 +1,5 @@
 # Miharix WiFi RC
-[SLO](https://github.com/miharix/miharix-wifi-rc/README.md#slo) / [ENG](https://github.com/miharix/miharix-wifi-rc/README.md#eng)
+[SLO](#slo) / [ENG](#eng)
 
 [![Alt text](https://img.youtube.com/vi/RT00wBG8huE/0.jpg)](https://www.youtube.com/watch?v=RT00wBG8huE)
 
@@ -7,7 +7,7 @@
 
 ---
 
-[**SLO**](#slo)
+#### [SLO]
 
 Vezje in programski primeri za izdelavo super poceni RV preko WiFi (pametni telefon,tablica,...)
 
@@ -44,7 +44,7 @@ Za naredit:
 
 ---
 
-[**ENG**](#eng)
+#### [ENG]
 
 PCB and Example Software for making super cheap RC control over WiFi (mobile phone,tablet,...)
 
