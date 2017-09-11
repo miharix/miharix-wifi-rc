@@ -1,5 +1,7 @@
 # Miharix WiFi RC
-[SLO](#slo) / [ENG](#eng)
+[SLO](#slo) / [DE](#de) / [ENG](#eng)
+
+[![Alt text](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/) [![Alt text](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/miharix)
 
 [![Alt text](https://img.youtube.com/vi/RT00wBG8huE/0.jpg)](https://www.youtube.com/watch?v=RT00wBG8huE)
 
@@ -40,6 +42,43 @@ Za naredit:
 * (6 servo demo)Expo
 * (6 servo demo)Izklop samodejnega povratka ročice poljubne osi v središče
 * (6 servo demo)Sočasno aktivianje gumba za 5&6 med premikanjem ročic
+* ...
+
+---
+
+#### [DE]
+
+Schaltung und  Programmierbeispiele um eine super-billige Modellbaufernbedienung über WiFi (Smartphone, Tablett,...) zu bauen.
+
+Wen ihnen die Schaltung nutzbar ist, können Sie die Weiterentwicklung diesen und zukünftige Projekte mit kleiner Donation über https://paypal.me/miharix unterstützen.
+
+Was sich in der Unterordner befindet:
+* **3Dp** - einfaches 3Dp Gehäuse
+* **Arduino** - *Programmierbeispiele um den Modul zu programmieren*
+* **DIY** - *pdf um die Schaltung Zuhause selber nachzumachen*
+* **Documentation** - *Schema der Schaltung und Maßnahmen*
+* **Gerber** - *Dateien für PCB Hersteller*
+* **Render** - *3D Rander von PCB*
+
+**Um es zu bauen braucht man noch:**
+* 1x ESP-12E *(ESP8266)*
+* 1x MCP155ST-3302E 3,3V 300mA
+* 2x 10K SMD805 (10 kilo ohm)
+* 2x 1µF SMD805 (1 mikro Farad)
+* Optional 3-44 Stiftleisten Raster 2,54mm
+
+Um es es ganz einfach zu Programmieren ist die "Witty cloud" als Programmierer gerät vorgesehen. 
+
+Getestete Reichweite am Boden hohe cca 80m
+ [(5s bevor der Auto anhielt wurde der Signal abgebrochen)](https://youtu.be/WoqIe_oOWTM)
+
+Noch zu tun:
+* Test auf Kompatibilität mit noch mehreren Geraten
+* Test der Reichweite bei Gebrauch einer externer Antenne, Routers...
+* Anleitung(Video?) wie man es baut, programmiert, konfiguriert...
+* (6 servo demo)Expo
+* (6 servo demo)Ausschalten in die Mitte zurück springen beliebiges Knüppel  
+* (6 servo demo)Gleichzeitige Aktivierung der Knöpfe 5&6 und Knüppel Bewegung.
 * ...
 
 ---
