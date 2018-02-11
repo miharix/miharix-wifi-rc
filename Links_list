@@ -1,0 +1,41 @@
+Support PCB developer: https://paypal.me/miharix
+
+GPIO 10 & 9 problem
+https://www.letscontrolit.com/forum/viewtopic.php?f=6&t=1462
+https://github.com/esp8266/Arduino/issues/1446
+GPIO 10 & 9 Solution:
+http://smarpl.com/content/esp8266-esp-201-module-freeing-gpio9-and-gpio10
+http://www.esp8266.com/viewtopic.php?f=13&t=1216
+
+YT:
+RC car range test: https://youtu.be/RT00wBG8huE
+RC car inside: https://youtu.be/WoqIe_oOWTM
+
+Witty cloud
+http://m.os-mk.si/ESP8266.html#/7
+http://www.schatenseite.de/2016/04/22/esp8266-witty-cloud-modul/
+
+ESP8266
+http://m.os-mk.si/ESP8266.html#/
+http://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations
+
+Arduino
+(Board: NodeMCU 1.0 (ESP-12E Module);)
+http://m.os-mk.si/ESP8266.html#/7/4
+https://github.com/esp8266/Arduino
+http://arduino.esp8266.com/stable/package_esp8266com_index.json 
+
+ESP8266 firmware
+    Offical ESP8266 AT Firmware https://github.com/espressif/esp8266_at
+    Espressif FreeRTOS Firmware / SDK https://github.com/espressif/ESP8266_RTOS_SDK
+    NodeMCU Lua Based Firmware https://github.com/nodemcu/nodemcu-firmware/releases
+    Micro Python https://github.com/micropython/micropython/tree/master/esp8266
+    Arduino core for ESP8266 https://github.com/esp8266/arduino
+    Visuino https://www.visuino.com/
+    ESP-Lisp https://github.com/yesco/esp-lisp
+    Espruino http://www.espruino.com/EspruinoESP8266
+    Sming https://github.com/SmingHub/Sming
+    ESP8266 Basic http://www.esp8266basic.com/
+    ESPWebFramework https://github.com/fdivitto/ESPWebFramework
+
+

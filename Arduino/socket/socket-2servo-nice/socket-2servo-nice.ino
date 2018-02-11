@@ -16,12 +16,15 @@
 const bool invert_servo1 = true;
 const bool invert_servo2 = false;
 
-const char *ssid = "TromontanaS";
-const char *password = "zotkazotka";
+const char *ssid = "miharix_WiFi_RC";
+const char *password = "mihamiha";
 
-uint32_t failsaveS=5;
-const uint8_t failSaveServo1 = 40;
-const uint8_t failSaveServo2 = 80;
+uint32_t failsaveS=5; //seconds whithout new input till failsave
+const uint8_t failSaveServo1 = 40; //failsave position 0-180
+const uint8_t failSaveServo2 = 90;
+
+const uint8_t initSaveServo1 = 90; //startup servo position 0-180
+const uint8_t initSaveServo2 = 90;
 //end of adjusting, more is at the botom
 
 
@@ -56,8 +59,8 @@ const char skripta[] PROGMEM = "<html><head><title>Miharix WiFi RC</title>"
 "Miharix WiFi RC"
 
 //set servo range and init value !!!! <<<<<<<<<<<<<<<<---------------<<<<<<<<<<<<<<<<---------------
-"<input id='s' class='range horizontal-lowest-first round servo1' type='range' oninput='sendServo();' min='10' max='170' step='1' value='90'>"
-"<input id='g' class='range vertical-heighest-first round servo2' type='range' oninput='sendServo();' min='10' max='170' step='1' value='90'>"
+"<input id='s' class='range horizontal-lowest-first round servo1' type='range' oninput='sendServo();' min='30' max='150' step='1' value='90'>"
+"<input id='g' class='range vertical-heighest-first round servo2' type='range' oninput='sendServo();' min='70' max='110' step='1' value='90'>"
 "</body></html>";
 
 
@@ -184,11 +187,11 @@ void setup() {
     MDNS.addService("http", "tcp", 80);
     MDNS.addService("ws", "tcp", 81);
 
-//set servo init value <<<<<<<<<<<<<<<<---------------
+//set servo init value <<<<<<<<<<<<<<<<--------------------------------------
   servo1.attach(SERVO1);
-  servo1.write(90);
+  servo1.write(initSaveServo1);
   servo2.attach(SERVO2);
-  servo2.write(90);
+  servo2.write(initSaveServo2);
 //
   pinMode(2, OUTPUT);
 
