@@ -22,10 +22,11 @@ Kaj se nahaja v mapah:
 * **Documentation** - *shema vezave in mere*
 * **Gerber** - *datoteke za proizvajalca vezij*
 * **Render** - *3D izris vezja*
+* **Python** - *primer kode za krmiljenje iz računalnika*
 
 **Za  izdelavo še potrebujete:**
 * 1x ESP-12E *(ESP8266)*
-* 1x MCP155ST-3302E 3,3V 300mA
+* 1x MCP1755ST-3302E 3,3V 300mA
 * 2x 10K SMD805 (10 kilo ohm)
 * 2x 1µF SMD805 (1 mikro Farad)
 * opcijsko 3-44 letev moška enoredna lomljiva raster 2,54mm
@@ -39,7 +40,7 @@ Za naredit:
 * Testirat na čim več napravah
 * Test dometa pri uporabi zunanje antene, ruterja...
 * Navodila(video?) kako izdelat, programirat, nastavljat...
-* (6 servo demo)Expo
+* ~~(6 servo demo)Expo~~
 * (6 servo demo)Izklop samodejnega povratka ročice poljubne osi v središče
 * (6 servo demo)Sočasno aktivianje gumba za 5&6 med premikanjem ročic
 * ...
@@ -59,10 +60,11 @@ Was sich in der Unterordner befindet:
 * **Documentation** - *Schema der Schaltung und Maßnahmen*
 * **Gerber** - *Dateien für PCB Hersteller*
 * **Render** - *3D Rander von PCB*
+* **Python** - *Programmierbeispiele um Mudil mit PC zu steuern*
 
 **Um es zu bauen braucht man noch:**
 * 1x ESP-12E *(ESP8266)*
-* 1x MCP155ST-3302E 3,3V 300mA
+* 1x MCP1755ST-3302E 3,3V 300mA
 * 2x 10K SMD805 (10 kilo ohm)
 * 2x 1µF SMD805 (1 mikro Farad)
 * Optional 3-44 Stiftleisten Raster 2,54mm
@@ -76,7 +78,7 @@ Noch zu tun:
 * Test auf Kompatibilität mit noch mehreren Geraten
 * Test der Reichweite bei Gebrauch einer externer Antenne, Routers...
 * Anleitung(Video?) wie man es baut, programmiert, konfiguriert...
-* (6 servo demo)Expo
+* ~~(6 servo demo)Expo~~
 * (6 servo demo)Ausschalten in die Mitte zurück springen beliebiges Knüppel  
 * (6 servo demo)Gleichzeitige Aktivierung der Knöpfe 5&6 und Knüppel Bewegung.
 * ...
@@ -96,10 +98,11 @@ What is in the folders:
 * **Documentation** - *shematic and dimensions*
 * **Gerber** - *files for a PCB factory*
 * **Render** - *3D render of PCB*
+* **Python** - *source code examples for PC control*
 
 **For building you also need:**
 * 1x ESP-12E *(ESP8266)*
-* 1x MCP155ST-3302E 3,3V 300mA
+* 1x MCP1755ST-3302E 3,3V 300mA
 * 2x 10K SMD805 (10 kilo ohm)
 * 2x 1µF SMD805 (1 mikro Farad)
 * optional 3-44 pin header male one line breakable raster 2,54mm
@@ -113,7 +116,7 @@ Todo List:
 * Testing on more devices
 * Range test using external antena, router...
 * Manual(video?) how to build, programming, configure...
-* (6 servo demo)Expo
+* ~~(6 servo demo)Expo~~
 * (6 servo demo)Disable nipple retun to center for individual axes 
 * (6 servo demo)Simultan button(channel 5&6) press and nipple usage
 * ...
