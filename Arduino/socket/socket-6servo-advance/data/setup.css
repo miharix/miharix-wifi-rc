@@ -1,0 +1,119 @@
+.pinID{
+font-size:1em;
+font-style: italic;
+color: #8b9b63;
+}
+.Servo, .wifi {display: inline-block;
+    width: 95%;
+    margin: 5px;
+    border: 2px solid #73AD21; 
+    border-radius: 10px; 
+background-color: #004000;
+font-size:2.0em;}
+.wifi{color: orange;
+background-color: #a90000;
+border: 2px solid orange;}
+.Servos{
+display: inline-block;
+width: 95%;
+background-color: #005000;
+border: 2px solid #73AD21; 
+border-radius: 10px; 
+margin-bottom: 80px;
+}
+.d {
+display: inline-block;
+ color: white;
+width: 30%;
+margin-left: 5px;
+}
+.r {
+display: inline-block;
+ color: white;
+width: 50%;
+margin-left: 5px;
+}
+
+#rc{
+color: #8b9b63;
+font-style: italic;
+font-weight: bold;
+}
+
+input[type='number']{
+display: inline-block;
+width: 60%;
+}
+
+input[type='text']{
+display: inline-block;
+width: 80%;
+}
+
+input[type='checkbox'] {
+display: inline-block;
+vertical-align: bottom;
+padding: 0;
+  margin:0;
+}
+.grupa{
+text-align: center;
+color: #8b9b63;
+font-style: italic;
+font-weight: bold;
+}
+body {
+background-image: url('bg.png');
+width:100%;
+        margin: 0px;
+text-align: center;
+color: #555;
+background-color: black;
+}
+button,.button{
+  width: 60px;
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+@media screen and (min-width: 900px) {
+.pinID{
+font-size:0.6em;
+font-style: italic;
+color: #8b9b63;
+
+}
+    .Servo, .wifi {
+        width: 170px;
+        margin: 5px;
+        border: 2px solid #73AD21; 
+        border-radius: 10px; 
+        font-size:1em;
+    }
+    .wifi {
+        width: 300px;
+    }
+    input[type='text']{
+        width: 65%;
+    }
+    .Servos{
+        margin-top: 80px;
+    }
+    button,.button{
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+
+    }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset='UTF-8'> 
+ <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'/>
+
+<title>Miharix WiFi RC</title>
+<script src='control1.js' charset='utf-8'></script>
+<link rel="icon" type="image/png" href="icona.png" />
+<link rel="stylesheet" type="text/css" href="control1.css">
+   
+    
+</head>
+
+<body>
+  <div id='RCName'>Miharix WiFi RC</div>
+ <div id='left1'>
+ <button id='S1' type='button' class='button' value=0 onclick='ButtonS1();'></button> 
+</div>
+  <div id='right1'>
+<button id='S2' type='button' class='button' value=0 onclick='ButtonS2();'></button> 
+</div>
+ <div id='left2'>
+ <button id='S3' type='button' class='button' value=0 onclick='ButtonS3();'></button> 
+</div>
+  <div id='right2'>
+<button id='S4' type='button' class='button' value=0 onclick='ButtonS4();'></button> 
+</div>
+  <div id='left3'>
+    <button id='S5' type='button' class='button' value=0 onclick='ButtonS5();'></button> 
+  </div>
+  <div id='right3'>
+    <button id='S6' type='button' class='button' value=0 onclick='ButtonS6();'></button> 
+  </div>
+ 
+  
+  
+  
+  <script>
+      function ButtonS1(){
+	if(S1.value==0){
+	  S1.value=180;
+	  S1.style.backgroundColor='AntiqueWhite';
+	}else{
+	  S1.value=0;
+	  S1.style.backgroundColor='#005000';
+	};
+	sendServo();
+      }
+      
+      function ButtonS2(){
+	if(S2.value==0){
+	  S2.value=180;
+	  S2.style.backgroundColor='Sienna';
+	}else{
+	  S2.value=0;
+	  S2.style.backgroundColor='#005000';
+	};
+	sendServo();
+      }
+      
+      function ButtonS3(){
+	if(S3.value==0){
+	  S3.value=180;
+	  S3.style.backgroundColor='LightBlue';
+	}else{
+	  S3.value=0;
+	  S3.style.backgroundColor='#005000';
+	};
+	sendServo();
+      }
+      
+      function ButtonS4(){
+	if(S4.value==0){
+	  S4.value=180;
+	  S4.style.backgroundColor='GoldenRod';
+	}else{
+	  S4.value=0;
+	  S4.style.backgroundColor='#005000';
+	};
+	sendServo();
+      }
+      
+
+      function ButtonS5(){
+	if(S5.value==0){
+	  S5.value=180;
+	  S5.style.backgroundColor='LightCoral';
+	}else{
+	  S5.value=0;
+	  S5.style.backgroundColor='#005000';
+	};
+	sendServo();
+      }
+      
+      function ButtonS6(){
+	if(S6.value==0){
+	  S6.value=180;
+	  S6.style.backgroundColor='DarkSlateBlue';
+	}else{
+	  S6.value=0;
+	  S6.style.backgroundColor='#005000';
+	};
+	sendServo();
+	
+      }
+      
+  </script>
+  <!--https://github.com/miharix/miharix-wifi-rc/-->
+  <!--nipples https://github.com/yoannmoinet/nipplejs-->
+</body>
+</html>

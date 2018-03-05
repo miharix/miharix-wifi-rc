@@ -10,6 +10,7 @@ http://www.esp8266.com/viewtopic.php?f=13&t=1216
 YT:
 RC car range test: https://youtu.be/RT00wBG8huE
 RC car inside: https://youtu.be/WoqIe_oOWTM
+https://www.youtube.com/watch?v=jIOTzaeh7fs
 
 Witty cloud
 http://m.os-mk.si/ESP8266.html#/7
@@ -18,12 +19,21 @@ http://www.schatenseite.de/2016/04/22/esp8266-witty-cloud-modul/
 ESP8266
 http://m.os-mk.si/ESP8266.html#/
 http://www.esp8266.com/wiki/doku.php?id=esp8266_gpio_pin_allocations
+https://github.com/esp8266/Arduino/issues/3205
+https://github.com/esp8266/Arduino/issues/3186
+https://github.com/esp8266/Arduino/pull/2533/files
+https://github.com/esp8266/Arduino/issues/2942
+https://tttapa.github.io/ESP8266/Chap11%20-%20SPIFFS.html
+
 
 Arduino
 (Board: NodeMCU 1.0 (ESP-12E Module);)
 http://m.os-mk.si/ESP8266.html#/7/4
 https://github.com/esp8266/Arduino
 http://arduino.esp8266.com/stable/package_esp8266com_index.json 
+https://www.arduino.cc/en/Reference/SchedulerYield
+https://www.arduino.cc/en/Guide/PortableIDE
+
 
 ESP8266 firmware
     Offical ESP8266 AT Firmware https://github.com/espressif/esp8266_at
@@ -37,5 +47,10 @@ ESP8266 firmware
     Sming https://github.com/SmingHub/Sming
     ESP8266 Basic http://www.esp8266basic.com/
     ESPWebFramework https://github.com/fdivitto/ESPWebFramework
+
+
+https://www.creativejuiz.fr/blog/en/javascript-en/read-url-get-parameters-with-javascript
+https://jsoneditoronline.org/
+https://www.helifreak.com/showthread.php?t=496729
 
 

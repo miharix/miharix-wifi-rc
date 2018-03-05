@@ -1,0 +1,78 @@
+ html, body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+            overflow:hidden;
+	    background: black;
+	    background-image: url('bg.png');
+        }
+        #leftB {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 80%;
+            width: 50%; 
+        }
+         #leftT {
+            position: absolute;
+            left: 0;
+            top: 80%;
+            height: 20%;
+            width: 50%;
+        }
+        #rightB {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 80%;
+            width: 50%;
+        }
+        #rightT {
+            position: absolute;
+            right: 0;
+            top: 80%;
+            height: 20%;
+            width: 50%;
+        }
+       .button {
+	    display: inline-block;
+	    padding: 0px 0px;
+	    font-size: 100%;
+	    cursor: pointer;
+	    text-align: center;
+	    text-decoration: none;
+	    outline: 0 !important; 
+	    color: #FF4000;
+	    background-color: #004000;
+	    border: none;
+	    border-radius:30px;
+	    position: absolute;
+	    width: 80%;
+	    height: 80%;
+	    top: 10%;
+	    right: 10%;
+	}
+	#RCName {
+	    position: absolute;
+	    pointer-events: none;
+            right: 0;
+            top: 0;
+            height: 16px;
+            width: 100%;
+            z-index: 1;
+            font-size: 15px;
+            text-align: center;
+            color: #555;
+	}
+	button::-moz-focus-inner {
+	    border: 0;
+	}
+	.button:active {
+	    background-color: #005000;
+	    color: #005000;
+	    transform: translateY(4px);
+	}

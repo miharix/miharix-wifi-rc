@@ -1,0 +1,19 @@
+* 6 servo support
+* easy configurable
+	* each servo configurable:
+		*	Trim center
+		*	Max position
+		*	Min position
+		*	Fail position
+		*	Expo rate
+		*	Rate speed
+		*	Reverse
+	* Fail save timeout
+	* 6 different control designs
+	* RC model name
+	* Access Point(AP) mode or connect to existing WiFi
+	* SSID
+	* Password
+* includes possibility to hard reset to "factory" settings
+* in case of wrong SSID or Password in non AP mode after 5 min triggers reset to "factory" settings
+* "factory" settings SSID includes MAC
