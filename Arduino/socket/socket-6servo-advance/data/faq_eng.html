@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset="UTF-8"> 
+<meta http-equiv='cache-control' content='no-cache' />
+<link rel="icon" type="image/png" href="icona.png" />
+<link rel="stylesheet" type="text/css" href="setup.css">
+<title>Config - Miharix WiFi RC</title>
+</head>
+<body>
+<div id='rc'>Miharix WiFi RC - V4.0</div>
+<div >Made by: miharix</div>
+<div>Git: https://github.com/miharix</div>
+<div>Website: http://miharix.eu</div>
+<div>Donate: https://www.paypal.me/miharix</div>
+<div class='Servos faq' style="width:80%">1. Go to <a href="setup"><b>Setup</b></a> and configure the module<br>
+<i>You can access setup any time by opening 192.168.4.1/setup<br> (or conf,config,admin,administrator,root,nastavi,uredi)</i>
+<br>
+<br>
+Setup parameters:
+<ul>
+<li><b>Pin</b> - Where to connect the servo</li>
+<li><b>Trim</b> - Sub Trim - fix center point in °</li>
+<li><b>Max</b> - maximum trevel in ms</li>
+<li><b>Min</b> - minimum travel in ms</li>
+<li><b>Fail</b> - failsave position in ms</li>
+<li><b>Expo</b> - Expo Rate - reduce center sensitivity</li>
+<li><b>Rate</b> - Speed of the servo</li>
+<li><b>Reverse</b> - reverse servo movement</li>
+</ul>
+<ul>
+<li><b>read EEPROM</b> - reset to last saved state</li>
+<li><b>Write RAM</b> - use those till power off</li>
+<li><b>Write EEPROM</b> - use those also after power offf </li>
+</ul>
+
+<ul>
+<li><b>Fail. time</b> - Time in s till failsave trigers</li>
+<li><b>Mode</b> - Controling interface style</li>
+<li><b>RC Name</b> - Name of the RC modell</li>
+<li><b>SSID</b> - WiFi name</li>
+<li><b>PASS</b> - Password for the WiFi</li>
+<li><b>AP</b> - Standalone AccesPoint(AP) or connect to existing WiFi</li>
+</ul>
+<ul>
+<li><b>reboot</b> - reboot only</li>
+<li><b>reset all</b> - reset module to factory settings</li>
+<li><b>set wifi</b> - save WiFi settings</li>
+</ul>
+
+2. Go directly to <a href="control"><b>Control</b></a> using default settings.
+<hr>
+<hr>
+<ul  class='note'>
+<li>For manual factory reset connect GPIO 0 to GND till blinking stops.</li><br/>
+<li>!! Do not connect any GPIO to 5V(middle pin), it will destroy the chip !!</li><br/>
+<li>In case of saving wrong credentials for existing WiFi wait 5min to automatic factory reset.</li>
+</ul>
+<div>
+</body>
+</html>
+

@@ -19,10 +19,10 @@
 
       var S1 = parseInt(document.getElementById('S1').value).toString(16);
       var S2 = parseInt(document.getElementById('S2').value).toString(16);
-      var S3 = 0;
-      var S4 = 0;    
-      var S5 = 0;
-      var S6 = 0;
+      var S3 = "0";
+      var S4 = "0";    
+      var S5 = "0";
+      var S6 = "0";
       
       if(S1.length < 2) { S1 = '0' + S1; }
       if(S2.length < 2) { S2 = '0' + S2; }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset='UTF-8'> 
+ <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'/>
+
+<title>Miharix WiFi RC</title>
+<script src='control7.js' charset='utf-8'></script>
+<script src='nipplejs.min.js' charset='utf-8'></script>
+<link rel="icon" type="image/png" href="icona.png" />
+<link rel="stylesheet" type="text/css" href="control6.css">
+   
+    
+</head>
+
+<body>
+  <div id='RCName'>Miharix WiFi RC</div>
+  <div id='J1'></div>
+
+  
+  
+  
+  <script>
+    var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    xs = w.innerWidth || e.clientWidth || g.clientWidth,
+    ys = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    if(xs>ys){xs=ys;};
+    nip_size=xs/1.2;
+    
+    max_rangeX1=180;
+    min_rangeX1=0;
+    
+    max_rangeY1=180;
+    min_rangeY1=0;
+    
+    max_rangeX2=180;
+    min_rangeX2=0;
+    
+    max_rangeY2=180;
+    min_rangeY2=0;
+
+      var joystick = nipplejs.create({
+	zone: document.getElementById('J1'),
+        mode: 'static',
+        position: { left: '50%', top: '50%' },
+        color: 'green',
+        size: nip_size,
+	restJoystick: true,
+        restOpacity: 1
+      });
+      
+   
+      joystick.on('move',function (evt, data){
+	if(((data.angle.degree<90)&&(data.angle.degree>0))||((data.angle.degree<360)&&(data.angle.degree>270))){
+	  X=Math.cos(data.angle.radian)*data.distance;
+	  Y=Math.sin(data.angle.radian)*data.distance;
+	}
+	if(((data.angle.degree<180)&&(data.angle.degree>90))||((data.angle.degree<270)&&(data.angle.degree>180))){
+	  X=-Math.cos(Math.PI-data.angle.radian)*data.distance;
+	  Y=Math.sin(Math.PI-data.angle.radian)*data.distance;
+	}
+	Servo1=((X+nip_size/2)*(max_rangeX1-min_rangeX1)/nip_size+min_rangeX1).toFixed(0);
+	Servo2=((Y+nip_size/2)*(max_rangeY1-min_rangeY1)/nip_size+min_rangeY1).toFixed(0);
+	
+	sendServo();
+      });
+        
+      joystick.on('end',function (evt, data){
+	Servo1=90;
+	Servo2=90;
+	sendServo();
+      });     
+      
+  </script>
+  <!--https://github.com/miharix/miharix-wifi-rc/-->
+  <!--nipples https://github.com/yoannmoinet/nipplejs-->
+</body>
+</html>

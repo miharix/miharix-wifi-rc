@@ -21,6 +21,12 @@ border: 2px solid #73AD21;
 border-radius: 10px; 
 margin-bottom: 80px;
 }
+.faq{
+    display: inline-block;
+    color: #abb170;
+    width: 30%;
+    margin-left: 5px;
+    }
 .d {
 display: inline-block;
  color: white;
@@ -69,10 +75,37 @@ width:100%;
 text-align: center;
 color: #555;
 background-color: black;
+
 }
 button,.button{
-  width: 60px;
-  font: bold 11px Arial;
+    background-color: transparent;
+    background-image:url('load.svg');
+    height: 120px;
+width: 120px; 
+ background-repeat:no-repeat;
+ background-size: 100% 100%;
+ display: inline-block;
+ font-weight: bold;
+ border: none;
+ color: #ffa200;
+ -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    vertical-align: bottom;
+    border-radius: 10%;
+    background-color: #67844466;
+    line-height: 175px;
+    font-size:0.6em;
+     white-space: nowrap;
+  }
+  
+  button:hover,.button:hover {
+    background-color: #c3bb15;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    
+}
+  /*font: bold 11px Arial;
   text-decoration: none;
   background-color: #EEEEEE;
   color: #333333;
@@ -80,6 +113,42 @@ button,.button{
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+}*/
+
+.faqB{
+    background-image:url('book.svg');
+}
+.load{
+  background-image:url('load.svg');
+}
+.save{
+  background-image:url('save.svg');
+}
+.temp{
+  background-image:url('ok.svg');
+}
+.reboot{
+    background-image:url('reboot.svg');
+}
+.restore{
+    background-image:url('restore.svg');
+}
+.wifib{
+    background-image:url('wifi.svg');
+}
+
+a{
+    text-decoration: none;
+    color: #f29468;
+}
+.note{
+    color: #ff8686;
+    font-style: italic;
+    font-weight: bold;
+}
+a:hover{
+    text-decoration: underline;
+    color: #00c0ff;
 }
 
 @media screen and (min-width: 900px) {
@@ -106,6 +175,11 @@ color: #8b9b63;
         margin-top: 80px;
     }
     button,.button{
+        height: 80px;
+        width: 80px;
+        
+    }
+   /* 
   font: bold 11px Arial;
   text-decoration: none;
   background-color: #EEEEEE;
@@ -115,5 +189,5 @@ color: #8b9b63;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
 
-    }
+    }*/
 }

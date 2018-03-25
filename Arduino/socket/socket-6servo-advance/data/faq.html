@@ -4,56 +4,56 @@
 <meta http-equiv='cache-control' content='no-cache' />
 <link rel="icon" type="image/png" href="icona.png" />
 <link rel="stylesheet" type="text/css" href="setup.css">
-<title>Config - Miharix WiFi RC</title>
+<title>Nastavi - Miharix WiFi RC</title>
 </head>
 <body>
-<div id='rc'>Miharix WiFi RC - V3</div>
-<div >Made by: miharix</div>
+<div id='rc'>Miharix WiFi RC - V4.0</div>
+<div >Avtor: miharix</div>
 <div>Git: https://github.com/miharix</div>
-<div>Website: http://miharix.eu</div>
-<div>Donate: https://www.paypal.me/miharix</div>
-<div class='Servos d' style="width:80%">1. Go to <a href="setup"><b>Setup</b></a> and configure the module<br>
-<i>You can access setup any time by opening 192.168.4.1/setup<br> (or conf,config,admin,administrator,root,nastavi,uredi)</i>
+<div>Spletna stran: http://miharix.eu</div>
+<div>Donacije: https://www.paypal.me/miharix</div>
+<div class='Servos faq' style="width:80%">1. Pojdi na <a href="nastavi"><b>nastavi</b></a> in nastavi modulček<br>
+<i>Nasvative lahko vedno spremeniš na naslovu http://192.168.4.1/nastavi<br><small>(ali setup,conf,config,admin,administrator,root,nastavi,uredi)</small></i>
 <br>
 <br>
-Setup parameters:
+Razlaga pojmov v nastvativah:
 <ul>
-<li><b>Pin</b> - Where to connect the servo</li>
-<li><b>Trim</b> - fix center point in °</li>
-<li><b>Max</b> - maximum trevel in ms</li>
-<li><b>Min</b> - minimum travel in ms</li>
-<li><b>Fail</b> - failsave position in ms</li>
-<li><b>Expo</b> - expo rate - reduce center sensitivity</li>
-<li><b>Rate</b> - speed of the servo</li>
-<li><b>Reverse</b> - reverse servo movemend</li>
+<li><b>Pin</b> - Kam priključiš motorček</li>
+<li><b>Trim</b> - Korekcija sredinske točke v stopinjah <small>(-90 - +90°)</small></li>
+<li><b>Max</b> - Največji odklon v ms <small>(544-1500-2400)</small></li>
+<li><b>Min</b> - Najmanjši odklon v ms <small>(544-1500-2400)</small></li>
+<li><b>Fail</b> - Pozicija ob izgubi signala v ms <small>(544-1500-2400)</small></li>
+<li><b>Expo</b> - Znižaj občutljivost v sredini <small>(0-100)</small></li>
+<li><b>Rate</b> - Znižaj pospeške motorčka <small>(0-250)</small></li>
+<li><b>Reverse</b> - Spremeni smer vrtenja motorčka</li>
 </ul>
 <ul>
-<li><b>read EEPROM</b> - reset to last saved state</li>
-<li><b>Write RAM</b> - use those till power off</li>
-<li><b>Write EEPROM</b> - use those also after power offf </li>
+<li><b>read EEPROM</b> - Povrni na zadnje shranjene nastavitve</li>
+<li><b>Write RAM</b> - Uporabljaj te nastavitve le do izklopa</li>
+<li><b>Write EEPROM</b> - Uporabljaj te nastavitve tudi po izklopu </li>
 </ul>
 
 <ul>
-<li><b>Fail. time</b> - Time in s till failsave trigers</li>
-<li><b>Mode</b> - Controling interface style</li>
-<li><b>RC Name</b> - Name of the RC modell</li>
-<li><b>SSID</b> - WiFi name</li>
-<li><b>PASS</b> - Password for the WiFi</li>
-<li><b>AP</b> - Standalone AccesPoint(AP) or connect to existing WiFi</li>
+<li><b>Fail. time</b> - Čas v sekundah preden se uporabijo pozicije izgube signala</li>
+<li><b>Mode</b> - Izgled vmesnika za krmiljenje <small>(0-9)</small></li>
+<li><b>RC Name</b> - Ime RV modela</li>
+<li><b>SSID</b> - Ime WiFi omrežja</li>
+<li><b>PASS</b> - Geslo WiFi omrežjaja</li>
+<li><b>AP</b> - Samostojni oddajnik <small><i>(AccesPoint [AP])</i></small> ali se poveži na obstoječi WiFi</li>
 </ul>
 <ul>
-<li><b>reboot</b> - reboot only</li>
-<li><b>reset all</b> - reset module to factory settings</li>
-<li><b>set wifi</b> - save WiFi settings</li>
+<li><b>reboot</b> - Ponovno zaženi</li>
+<li><b>reset all</b> - Ponastavi modulček na tovarniške nastavitve</li>
+<li><b>set wifi</b> - Shrani WiFi nastavitve</li>
 </ul>
 
-2. Go directly to <a href="control"><b>Control</b></a> using default settings.
+2. <a href="control"><b>Krmili</b></a> z uporabo privzetih nastavitev.
 <hr>
 <hr>
-<ul>
-<li><i>For manual factory reset connect GPIO 0 to GND till blinking stops</i></li>
-<li><i>!! Do not connect any GPIO to 5V(middle pin), it will destroy the chip !!</i></li>
-<li><i>In case of saving wrong credentials for existing WiFi wait 5min to automatic factory reset</i></li>
+<ul class='note'>
+<li>Za ročno ponastavitev na tovarniške nastavitve skleni GPIO 0 ter GND dokler utripanje ne odneha.</li><br/>
+<li>!! Ne skeni nobenega GPIO na 5V(sredinski priključek), saj bo le to uničilo čip !!</li><br/>
+<li>V primeru shranitve napačnih podatkov za povezavo na obstoječe WiFi, počakaj 5min za samodejno ponastavitev na tovarniške nastavitve.</li>
 </ul>
 <div>
 </body>

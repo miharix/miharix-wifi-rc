@@ -2,8 +2,8 @@
   "SSID": "SSID",
   "Pass": "miharix.eu",
   "WiFiAP": true,
-  "RCname": "V3",
-  "Mode":6,
+  "RCname": "V4.0",
+  "Mode":4,
   "Ftime":5,
   "Servo1": {
     "max": 2400,

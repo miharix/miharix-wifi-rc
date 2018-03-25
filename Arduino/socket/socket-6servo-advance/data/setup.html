@@ -126,25 +126,31 @@ Miharix WiFi RC - Config
 <input type='checkbox' Id='s6r' name='s6r' value='true'>
 </div>
 
+
+
 <div>
 
-<a href="setup.html" class="button">Read EEPROM</a>
-<button type='submit' Id='s2' name='save' value=1>Write RAM</button>
-<button type='submit' Id='s3' name='save' value=2>Write EEPROM</button>
+<a href="faq.html" class="button faqB" title="FAQ">FAQ</a>
+<a href="setup.html" class="button load" title="Read EEPROM">Read EEPROM</a>
+<button type='submit' class="temp" Id='s2' name='save' value=1 title="Read EEPROM">Write RAM</button>
+<button type='submit' class="save" Id='s3' name='save' value=2 title="Write EEPROM">Write EEPROM</button>
 
+
+
+
+</div>
 </form>
+</div>
 
 
-</div>
-</div>
 
 <div class='WiFi'>
-<a href="faq.html" class="button">FAQ</a>
+
 <form action='setup.html' method='get'>
 <div class='d'>Fail. time:</div>
 <input type='number' Id='Ftime' name='Ftime' value='5' step='1' min='1' max='20'>
 <div class='d'>Mode:</div>
-<input type='number' Id='Mode' name='Mode' value='6' step='1' min='0' max='6'>
+<input type='number' Id='Mode' name='Mode' value='4' step='1' min='0' max='9'>
 <div class='d'>RC Name:</div>
 <input type='text' id='rcname' name='rcname' required placeholder='rcname' minlength='1' maxlength='32'>
 <div class='d'>SSID:</div>
@@ -153,11 +159,11 @@ Miharix WiFi RC - Config
 <input type='text' id='RCPASS' name='RCPASS' required placeholder='Password' minlength='8' maxlength='10'  >
 <div class='r'>AP:</div>
 <input type='checkbox' Id='WiFiAP' name='WiFiAP' value='true' checked>
-
+<br><br>
 <div>
-<button  type='submit' Id='WIFI' name='save' value='3'>Reboot</button>
-<button  type='submit' Id='WIFI' name='save' value='4'>Reset All</button>
-<button  type='submit' Id='WIFI' name='save' value='5'>Set WiFi</button>
+<button  type='submit' Id='WIFI' name='save' class="reboot" value='3' title="Reboot">Reboot</button>
+<button  type='submit' Id='WIFI' name='save' class="restore" value='4' title="Reset All">Reset All</button>
+<button  type='submit' Id='WIFI' name='save' value='5' class="save" title="Set WiFi" >Set WiFi</button>
 </div>
 </form>
 </div>
