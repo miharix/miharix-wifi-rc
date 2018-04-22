@@ -1,11 +1,15 @@
 # Miharix WiFi RC
 [SLO](#slo) / [DE](#de) / [ENG](#eng)
 
-[![Alt text](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/) [![Alt text](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/miharix)
+[![Alt text](https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Alt text](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/miharix)
 
 [![Alt text](https://img.youtube.com/vi/RT00wBG8huE/0.jpg)](https://www.youtube.com/watch?v=RT00wBG8huE)
 
 [![Alt text](https://img.youtube.com/vi/3g94vfjdDN8/0.jpg)](https://www.youtube.com/watch?v=3g94vfjdDN8)
+
+[![Alt text](https://img.youtube.com/vi/HDuuVXv958U/0.jpg)](https://www.youtube.com/watch?v=HDuuVXv958U )
+
+[![Alt text](https://img.youtube.com/vi/yLpb7ZpspFQ/0.jpg)](https://www.youtube.com/watch?v=yLpb7ZpspFQ )
 
 ---
 
