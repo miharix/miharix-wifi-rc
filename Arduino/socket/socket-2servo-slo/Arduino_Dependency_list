@@ -1,0 +1,10 @@
+File -> Preferences -> Additional Boards Manager URLs:
+http://arduino.esp8266.com/stable/package_esp8266com_index.json 
+
+Tools -> Board -> Boards Manager
+"esp8266 by ESP8266 Community" (2.4.0-rc2)
+--> after install
+Tools -> Board -> select "NodeMCU 1.0 (ESP-12E Module)"
+
+Sketch -> Include Library -> Manage Libraries
+"WebSockets by Markus Sattles" - WebSockets for Arduino (Server + Client) - (2.1.1)

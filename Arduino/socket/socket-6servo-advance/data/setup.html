@@ -1,8 +1,9 @@
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8"> 
 <meta http-equiv='cache-control' content='no-cache' />
-<link rel="icon" type="image/png" href="icona.png" />
+	<link rel="icon" type="image/png" href="icona.png" />
 <link rel="stylesheet" type="text/css" href="setup.css">
 <script src='setup.js' charset='utf-8'></script>
 <title>Config - Miharix WiFi RC</title>
@@ -150,12 +151,12 @@ Miharix WiFi RC - Config
 <div class='d'>Fail. time:</div>
 <input type='number' Id='Ftime' name='Ftime' value='5' step='1' min='1' max='20'>
 <div class='d'>Mode:</div>
-<input type='number' Id='Mode' name='Mode' value='4' step='1' min='0' max='9'>
+<input type='number' Id='Mode' name='Mode' value='4' step='1' min='0' max='14'>
 <div class='d'>RC Name:</div>
 <input type='text' id='rcname' name='rcname' required placeholder='rcname' minlength='1' maxlength='32'>
-<div class='d'>SSID:</div>
-<input type='text' id='RCSSID' name='RCSSID' required placeholder='SSID' minlength='1' maxlength='32'>
-<div class='d'>PASS:</div>
+<div class='d'>SSID(1-32):</div>
+<input type='text' id='RCSSID' name='RCSSID' required placeholder='SSID' pattern="[^\s]+" minlength='1' maxlength='32' title="1-32 char - No space !!">
+<div class='d'>PASS(8-10):</div>
 <input type='text' id='RCPASS' name='RCPASS' required placeholder='Password' minlength='8' maxlength='10'  >
 <div class='r'>AP:</div>
 <input type='checkbox' Id='WiFiAP' name='WiFiAP' value='true' checked>

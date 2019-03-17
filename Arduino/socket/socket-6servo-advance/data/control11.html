@@ -4,13 +4,12 @@
 <link rel="icon" type="image/png" href="icona.png" />
 <link rel="stylesheet" type="text/css" href="control2.css">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-<meta charset="UTF-8">
 </head>
 <body>
 
 Miharix WiFi RC
-<input id='S1' class='range vertical-heighest-first round servo1' type='range' oninput='sendServo();' onmouseup='S1Up()' ontouchend='S1Up()' onmouseout='S1Up()' min='0' max='180' step='1' value='90' >
+<input id='S1' class='range vertical-heighest-first round servo1' type='range' oninput='sendServo();' min='0' max='180' step='1' value='90' >
 
-<input id='S2' class='range vertical-heighest-first round servo2' type='range' oninput='sendServo();' onmouseup='S2Up()' ontouchend='S2Up()' onmouseout='S2Up()'  min='0' max='180' step='1' value='90'  >	
+<input id='S2' class='range horizontal-lowest-first round servo2' type='range' oninput='sendServo();' min='0' max='180' step='1' value='90'  >	
 </body>
 </html>

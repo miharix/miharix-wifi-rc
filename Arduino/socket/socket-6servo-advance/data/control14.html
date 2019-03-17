@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset='UTF-8'> 
+ <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'/>
+
+<title>Miharix WiFi RC</title>
+<script src='control1.js' charset='utf-8'></script>
+<link rel="icon" type="image/png" href="icona.png" />
+<link rel="stylesheet" type="text/css" href="control14.css">
+   
+    
+</head>
+
+<body>
+<div id='RCName'>Miharix WiFi RC</div>
+<div id='forward'>
+<button id='S1' type='button' class='button' value=90 onpointerenter='ButtonS1();' onpointerover='ButtonS1();' ontouchend='ButtonS1_u();'></button> 
+</div>
+<div id='rightrotate'>
+<button id='S2' type='button' class='button' value=90 onpointerenter='ButtonS2();' onpointerover='ButtonS2();' ontouchend='ButtonS2_u();'></button> 
+</div>
+<div id='left'>
+<button id='S3' type='button' class='button' value=90 onpointerenter='ButtonS3();' onpointerover='ButtonS3();' ontouchend='ButtonS3_u();'></button> 
+</div>
+<div id='right'>
+<button id='S4' type='button' class='button' value=90 onpointerenter='ButtonS4();' onpointerover='ButtonS4();' ontouchend='ButtonS4_u();'></button> 
+</div>
+<div id='leftrotate'>
+<button id='S5' type='button' class='button' value=90 onpointerenter='ButtonS5();' onpointerover='ButtonS5();' ontouchend='ButtonS5_u();'></button> 
+</div>
+<div id='back'>
+<button id='S6' type='button' class='button' value=90 onpointerenter='ButtonS6();' onpointerover='ButtonS6();' ontouchend='ButtonS6_u();'></button> 
+</div>
+ 
+  
+  
+  
+  <script>
+  function ButtonS1(){
+	  S1.value=180;
+    S2.value=0;
+	  S1.style.backgroundColor='AntiqueWhite';
+    sendServo();
+   }
+   function ButtonS1_u(){
+     S1.value=90;
+     S2.value=90;
+     S1.style.backgroundColor='#005000';
+	   sendServo();
+   }
+    
+  function ButtonS2(){
+    S1.value=180;
+	  S2.value=180;
+	  S2.style.backgroundColor='DarkOrange';
+    sendServo();
+   }
+   function ButtonS2_u(){
+     S1.value=90;
+     S2.value=90;
+     S2.style.backgroundColor='#005000';
+	   sendServo();
+   }
+    
+  function ButtonS3(){
+	  S2.value=0;
+	  S3.style.backgroundColor='AntiqueWhite';
+    sendServo();
+   }
+   function ButtonS3_u(){
+     S1.value=90;
+     S2.value=90;
+     S3.style.backgroundColor='#005000';
+	   sendServo();
+   }
+    
+  function ButtonS4(){
+	  S1.value=180;
+	  S4.style.backgroundColor='AntiqueWhite';
+    sendServo();
+   }
+   function ButtonS4_u(){
+     S1.value=90;
+     S2.value=90;
+     S4.style.backgroundColor='#005000';
+	   sendServo();
+   }
+    
+  function ButtonS5(){
+	  S1.value=0;
+	  S2.value=0;
+	  S5.style.backgroundColor='DarkOrange';
+    sendServo();
+   }
+   function ButtonS5_u(){
+     S1.value=90;
+    S2.value=90;
+     S5.style.backgroundColor='#005000';
+	   sendServo();
+   }
+    
+  function ButtonS6(){
+	  S1.value=0;
+    S2.value=180;
+	  S6.style.backgroundColor='AntiqueWhite';
+    sendServo();
+   }
+   function ButtonS6_u(){
+     S1.value=90;
+     S2.value=90;
+     S6.style.backgroundColor='#005000';
+	   sendServo();
+   }
+  </script>
+  <!--https://github.com/miharix/miharix-wifi-rc/-->
+</body>
+</html>

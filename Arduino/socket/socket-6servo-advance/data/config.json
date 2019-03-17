@@ -3,7 +3,7 @@
   "Pass": "miharix.eu",
   "WiFiAP": true,
   "RCname": "V4.0",
-  "Mode":4,
+  "Mode":14,
   "Ftime":5,
   "Servo1": {
     "max": 2400,

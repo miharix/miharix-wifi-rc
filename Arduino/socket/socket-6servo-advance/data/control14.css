@@ -1,0 +1,93 @@
+html, body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+            overflow:hidden;
+	    background: black;
+	    background-image: url('bg.png');
+        }
+        #forward {
+            position: absolute;
+            left: 27%;
+            top: 5%;
+            height: 30%;
+            width: 46%; 
+        }
+	#left {
+            position: absolute;
+            left: 0;
+            top: 30%;
+            height: 40%;
+            width: 30%; 
+        }
+         #leftrotate {
+            position: absolute;
+            left: 30%;
+            top: 35%;
+            height: 30%;
+            width: 20%;
+        }
+        #rightrotate {
+            position: absolute;
+            right: 30%;
+            top: 35%;
+            height: 30%;
+            width: 20%;
+        }
+	#right {
+            position: absolute;
+            right: 0;
+            top: 30%;
+            height: 40%;
+            width: 30%;
+        }
+        #back {
+            position: absolute;
+            right: 27%;
+            top: 65%;
+            height: 30%;
+            width: 46%;
+			
+        }
+       .button {
+	    display: inline-block;
+	    padding: 0px 0px;
+	    font-size: 100%;
+	    cursor: pointer;
+	    text-align: center;
+	    text-decoration: none;
+	    outline: 0 !important; 
+	    color: #FF4000;
+	    background-color: #005000;
+	    border: none;
+	    border-radius:10px;
+	    position: absolute;
+	    width: 80%;
+	    height: 80%;
+	    top: 10%;
+	    right: 10%;
+		
+		   
+	}
+	#RCName {
+	    position: absolute;
+	    pointer-events: none;
+            right: 0;
+            top: 0;
+            height: 16px;
+            width: 100%;
+            z-index: 1;
+            font-size: 15px;
+            text-align: center;
+            color: #555;
+	}
+
+	.button:active {
+	    background-color: #005000;
+	    color: #005000;
+	    transform: translateY(4px);
+	}

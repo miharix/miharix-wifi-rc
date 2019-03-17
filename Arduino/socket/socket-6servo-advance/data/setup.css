@@ -1,16 +1,29 @@
 .pinID{
-font-size:1em;
 font-style: italic;
+text-align: left;
 color: #8b9b63;
+width: 50%;
+vertical-align: top; 
+display: inline-block;
+font-size:0.5em;
 }
-.Servo, .wifi {display: inline-block;
+.grupa{
+display: inline-block;
+text-align: left;
+color: #8b9b63;
+font-style: italic;
+font-weight: bold;
+vertical-align: center;
+width: 45%;
+}
+.Servo, .WiFi {display: inline-block;
     width: 95%;
     margin: 5px;
     border: 2px solid #73AD21; 
     border-radius: 10px; 
 background-color: #004000;
 font-size:2.0em;}
-.wifi{color: orange;
+.WiFi{color: orange;
 background-color: #a90000;
 border: 2px solid orange;}
 .Servos{
@@ -49,25 +62,22 @@ font-weight: bold;
 input[type='number']{
 display: inline-block;
 width: 60%;
+font-size: 1.0em
 }
 
 input[type='text']{
 display: inline-block;
 width: 80%;
+font-size: 1.0em
 }
 
 input[type='checkbox'] {
 display: inline-block;
-vertical-align: bottom;
+vertical-align: center;
 padding: 0;
   margin:0;
 }
-.grupa{
-text-align: center;
-color: #8b9b63;
-font-style: italic;
-font-weight: bold;
-}
+
 body {
 background-image: url('bg.png');
 width:100%;
@@ -79,7 +89,7 @@ background-color: black;
 }
 button,.button{
     background-color: transparent;
-    background-image:url('load.svg');
+ 
     height: 120px;
 width: 120px; 
  background-repeat:no-repeat;
@@ -151,26 +161,31 @@ a:hover{
     color: #00c0ff;
 }
 
-@media screen and (min-width: 900px) {
+@media only screen and (min-width: 900px) and (orientation: landscape) {
 .pinID{
 font-size:0.6em;
 font-style: italic;
 color: #8b9b63;
 
 }
-    .Servo, .wifi {
+    .Servo, .WiFi {
         width: 170px;
         margin: 5px;
         border: 2px solid #73AD21; 
         border-radius: 10px; 
         font-size:1em;
     }
-    .wifi {
+    .WiFi {
         width: 300px;
     }
     input[type='text']{
         width: 65%;
     }
+	input[type='number']{
+	display: inline-block;
+	width: 60%;
+	font-size:1em;
+	}
     .Servos{
         margin-top: 80px;
     }

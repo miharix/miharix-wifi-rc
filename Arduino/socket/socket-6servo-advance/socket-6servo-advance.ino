@@ -301,7 +301,7 @@ void CalcExpoRates() {
 #endif
   tempR = ExpoServo3 / 100.0;
   CalcExpoServo3 = pow(4, tempR);
-  
+
   tempR = ExpoServo4 / 100.0;
   CalcExpoServo4 = pow(4, tempR);
 
@@ -742,6 +742,7 @@ String getContentType(String filename) { // convert the file extension to the MI
   else if (filename.endsWith(".png")) return "image/png";
   else if (filename.endsWith(".gif")) return "image/gif";
   else if (filename.endsWith(".jpg")) return "image/jpeg";
+  else if (filename.endsWith(".svg")) return "image/svg+xml";
   else if (filename.endsWith(".ico")) return "image/x-icon";
   else if (filename.endsWith(".xml")) return "text/xml";
   else if (filename.endsWith(".pdf")) return "application/x-pdf";
@@ -947,8 +948,13 @@ bool loadConfig() {
 
 }
 
-void rebooESP() {
-  server.send(200, "text/html", "<html><head><meta http-equiv='refresh' content='60;url=/setup.html' /></head><body><h1>Auto <a href='/setup.html'>reload</a> in 60 seconds...</h1></body></html>");
+void rebooESP(String filename) {
+  //server.send(200, "text/html", "<html><head><meta http-equiv='refresh' content='60;url=/setup.html' /></head><body><h1>Auto <a href='/setup.html'>reload</a> in 60 seconds...</h1></body></html>");
+  
+  File file = SPIFFS.open(filename, "r");                    // Open the file
+  size_t sent = server.streamFile(file, "text/html");    // Send it to the client
+  file.close();                                          // Close the file again
+  
   delay(2000);
   ESP.restart();
 }
@@ -1117,10 +1123,12 @@ void handleargs() { //handle http_get arguments
     //RCname = server.arg("rcname").c_str();
   }
   if (server.hasArg("RCSSID")) {
-    server.arg("RCSSID").toCharArray(RCSSID, sizeof(RCSSID));
+    char  RCSSID_temp[64] = "SSID";
+    server.arg("RCSSID").toCharArray(RCSSID_temp, sizeof(RCSSID_temp));
     // RCSSID = server.arg("RCSSID").c_str();
-    if (RCSSID != "SSID") {
+    if (RCSSID_temp != "SSID") {
       factory_boot = false;
+      server.arg("RCSSID").toCharArray(RCSSID, sizeof(RCSSID));
 
       if (server.hasArg("RCPASS")) {
         server.arg("RCPASS").toCharArray(RCPASS, sizeof(RCPASS));
@@ -1157,9 +1165,10 @@ void handleargs() { //handle http_get arguments
 #ifdef DEBUG1
         Serial.println("REBOOT");
 #endif
-        rebooESP();
+        rebooESP("/reboot.html");
         break;
       case 4:
+        rebooESP("/restore.html");
         ResetToFactoryFlag = true;
         ResetToFactory();
 #ifdef DEBUG1
@@ -1172,8 +1181,10 @@ void handleargs() { //handle http_get arguments
           Serial.println("EEPROM saved");//save temp variables to json file
           Serial.println("SET WiFi restarting");
 #endif
+          rebooESP("/SSID_pass.html");
+        }else{
+        rebooESP("/reboot.html");
         }
-        rebooESP();
 
         break;
     }
@@ -1230,5 +1241,3 @@ bool handleFileRead(String path) { // send the right file to the client (if it e
 #endif
   return false;                                          // If the file doesn't exist, return false
 }
-
-
