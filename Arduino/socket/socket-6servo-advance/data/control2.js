@@ -44,3 +44,7 @@
 		document.getElementById('S1').value=90;
 		sendServo();
 	}
+	function S1UpM(){
+		document.getElementById('S1').value=0;
+		sendServo();
+	}

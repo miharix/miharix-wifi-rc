@@ -12,7 +12,7 @@
 
 
 //#define DEBUG
-#define DEBUG1
+//#define DEBUG1
 
 #define PRINTLN(var) Serial.print(#var ": "); Serial.println(var)
 
@@ -145,7 +145,7 @@ bool handleFileRead(String path);       // send the right file to the client (if
 void setup() {
   pinMode(HARD_RESET_PIN, INPUT);
 #ifdef DEBUG1
-  Serial.begin(115200);         // Start the Serial communication to send messages to the computer
+  Serial.begin(9600);         // Start the Serial communication to send messages to the computer
   delay(10);
   Serial.println('\n');
 #endif
