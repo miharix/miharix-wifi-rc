@@ -757,7 +757,7 @@ bool saveConfig() {
   if (!configFile) {
     return false;
   }
-  StaticJsonBuffer<1024> jsonBuffer;
+  StaticJsonBuffer<1124> jsonBuffer;
   JsonObject &json = jsonBuffer.createObject();
 
   if (!factory_boot) {
@@ -839,32 +839,38 @@ bool saveConfig() {
 }
 
 bool loadConfig() {
-  File configFile = SPIFFS.open("/config.json", "r");
+    
+  File configFile = SPIFFS.open("/config.json", "r"); 
   if (!configFile) {
     return false;
   }
+   
   size_t size = configFile.size();
+
 #ifdef DEBUG1
   Serial.println(size);
 #endif
-  if (size > 1024) {
+  if (size > 1124) {
 #ifdef DEBUG1
     Serial.println("Config to big");
 #endif
+
+
     return false;
   }
+        
   std::unique_ptr<char[]> buf(new char[size]);
   configFile.readBytes(buf.get(), size);
 #ifdef DEBUG
   Serial.println(buf.get());
 #endif
-  StaticJsonBuffer<1024> jsonBuffer;
+  StaticJsonBuffer<1124> jsonBuffer;
   JsonObject& json = jsonBuffer.parseObject(buf.get());
   if (!json.success()) {
 #ifdef DEBUG1
     Serial.println("parser error");
 #endif
-    return false;
+   return false;
   }
   configFile.close();//close the file
 
@@ -1123,7 +1129,7 @@ void handleargs() { //handle http_get arguments
     //RCname = server.arg("rcname").c_str();
   }
   if (server.hasArg("RCSSID")) {
-    char  RCSSID_temp[64] = "SSID";
+    char  RCSSID_temp[64] = "SSID_temp";
     server.arg("RCSSID").toCharArray(RCSSID_temp, sizeof(RCSSID_temp));
     // RCSSID = server.arg("RCSSID").c_str();
     if (RCSSID_temp != "SSID") {
