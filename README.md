@@ -1,7 +1,7 @@
 # Miharix WiFi RC
 [SLO](#slo) / [DE](#de) / [ENG](#eng)
 
-PCB and Firmware for **super cheap RC control over WiFi (Smart phone, Tablet, PC, ...) **
+PCB and Firmware for **super cheap RC control over WiFi (Smart phone, Tablet, PC, ...)**
 
  I was a teacher(10 years) and wanted to make RC more affordable and be able to build something RC in class
  (yes all kids in a regular class and for grade - budget: 15€/kid)
@@ -16,6 +16,7 @@ The module was used in my class, 3 other teachers, and in 2 modellmaking summer 
 
 
 Published in [![elektor](https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Elektor-Logo.svg/200px-Elektor-Logo.svg.png  "Elektor magazine")11/2018](https://www.elektormagazine.com/index.php/magazine/elektor-52/42095)  on page 82
+
 Published in magazine [TIM 4/2018](https://plus.si.cobiss.net/opac7/bib/40185093)  on page 24-27
 
 
