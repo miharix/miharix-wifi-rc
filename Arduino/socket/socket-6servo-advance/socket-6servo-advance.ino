@@ -8,6 +8,7 @@
 #include <WebSocketsServer.h>
 #include <ArduinoJson.h> //for parsing/saving json file
 #include <FS.h>   // Include the SPIFFS library
+#include <LittleFS.h>
 #include <Servo.h>
 
 
@@ -149,7 +150,9 @@ void setup() {
   delay(10);
   Serial.println('\n');
 #endif
-  SPIFFS.begin();                           // Start the SPI Flash Files System
+  if(!LittleFS.begin()){    // Start the SPI Flash Files System
+    Serial.println("An Error has occurred while mounting LittleFS");
+  }
   loadConfig();
   delay(10);
   // WiFi.disconnect();  //erese old ssid password
@@ -610,8 +613,8 @@ void ResetToFactory() {
       }
 
       //----------
-      File RestoreFile = SPIFFS.open("/config_restore.json", "r");
-      File RewriteFile = SPIFFS.open("/config.json", "w");
+      File RestoreFile = LittleFS.open("/config_restore.json", "r");
+      File RewriteFile = LittleFS.open("/config.json", "w");
       while (RestoreFile.available()) {
         digitalWrite(2, HIGH);
         RewriteFile.write(RestoreFile.read());
@@ -753,10 +756,11 @@ String getContentType(String filename) { // convert the file extension to the MI
 
 bool saveConfig() {
   print_variables();
-  File configFile = SPIFFS.open("/config.json", "w");
+  File configFile = LittleFS.open("/config.json", "w");
   if (!configFile) {
     return false;
   }
+  
   StaticJsonBuffer<1124> jsonBuffer;
   JsonObject &json = jsonBuffer.createObject();
 
@@ -840,8 +844,11 @@ bool saveConfig() {
 
 bool loadConfig() {
     
-  File configFile = SPIFFS.open("/config.json", "r"); 
+  File configFile = LittleFS.open("/config.json", "r"); 
   if (!configFile) {
+#ifdef DEBUG1
+    Serial.println("Failed to open file for reading");
+#endif
     return false;
   }
    
@@ -957,7 +964,7 @@ bool loadConfig() {
 void rebooESP(String filename) {
   //server.send(200, "text/html", "<html><head><meta http-equiv='refresh' content='60;url=/setup.html' /></head><body><h1>Auto <a href='/setup.html'>reload</a> in 60 seconds...</h1></body></html>");
   
-  File file = SPIFFS.open(filename, "r");                    // Open the file
+  File file = LittleFS.open(filename, "r");                    // Open the file
   size_t sent = server.streamFile(file, "text/html");    // Send it to the client
   file.close();                                          // Close the file again
   
@@ -973,36 +980,12 @@ void handleargs() { //handle http_get arguments
   }
   //update temp variables
 
-  if (server.hasArg("s1r")) {
-    invert_servo1 = server.arg("s1r");
-  } else {
-    invert_servo1 = false;
-  }
-  if (server.hasArg("s2r")) {
-    invert_servo2 = server.arg("s2r");
-  } else {
-    invert_servo2 = false;
-  }
-  if (server.hasArg("s3r")) {
-    invert_servo3 = server.arg("s3r");
-  } else {
-    invert_servo3 = false;
-  }
-  if (server.hasArg("s4r")) {
-    invert_servo4 = server.arg("s4r");
-  } else {
-    invert_servo4 = false;
-  }
-  if (server.hasArg("s5r")) {
-    invert_servo5 = server.arg("s5r");
-  } else {
-    invert_servo5 = false;
-  }
-  if (server.hasArg("s6r")) {
-    invert_servo6 = server.arg("s6r");
-  } else {
-    invert_servo6 = false;
-  }
+  invert_servo1 = server.hasArg("s1r");
+  invert_servo2 = server.hasArg("s2r");
+  invert_servo3 = server.hasArg("s3r");
+  invert_servo4 = server.hasArg("s4r");
+  invert_servo5 = server.hasArg("s5r");
+  invert_servo6 = server.hasArg("s6r");
 
   if (server.hasArg("s1f")) {
     failSaveServo1 = server.arg("s1f").toInt();
@@ -1140,12 +1123,7 @@ void handleargs() { //handle http_get arguments
         server.arg("RCPASS").toCharArray(RCPASS, sizeof(RCPASS));
         //RCPASS = server.arg("RCPASS").c_str();
       }
-      if (server.hasArg("WiFiAP")) {
-        WiFiAP = server.arg("WiFiAP");
-        //RCPASS = server.arg("RCPASS").c_str();
-      } else {
-        WiFiAP = false;
-      }
+      WiFiAP = server.hasArg("WiFiAP");
     }
   }
 
@@ -1209,7 +1187,7 @@ bool handleFileRead(String path) { // send the right file to the client (if it e
 #endif
   if (path.endsWith("/")) {
     if (factory_boot) { //factory boot show faq
-      path += "faq";
+      path += "faq_eng";
     } else {
       path += "control";          // If a folder is requested, send the index file
     }
@@ -1223,18 +1201,18 @@ bool handleFileRead(String path) { // send the right file to the client (if it e
   String pathWithRCmode = path + String(RCmode) + ".html";
 
 
-  if (SPIFFS.exists(pathWithGz) || SPIFFS.exists(path) || SPIFFS.exists(pathWithHtml) || SPIFFS.exists(pathWithRCmode)) { // If the file exists, either as a compressed archive, or normal
-    if (SPIFFS.exists(pathWithGz)) {                        // If there's a compressed version available
+  if (LittleFS.exists(pathWithGz) || LittleFS.exists(path) || LittleFS.exists(pathWithHtml) || LittleFS.exists(pathWithRCmode)) { // If the file exists, either as a compressed archive, or normal
+    if (LittleFS.exists(pathWithGz)) {                        // If there's a compressed version available
       path += ".gz";
     } else {                         // Use the compressed version
-      if (SPIFFS.exists(pathWithHtml)) {
+      if (LittleFS.exists(pathWithHtml)) {
         path += ".html";
       } else {
-        if (SPIFFS.exists(pathWithRCmode))
+        if (LittleFS.exists(pathWithRCmode))
           path += String(RCmode) + ".html";
       }
     }
-    File file = SPIFFS.open(path, "r");                    // Open the file
+    File file = LittleFS.open(path, "r");                    // Open the file
     size_t sent = server.streamFile(file, contentType);    // Send it to the client
     file.close();                                          // Close the file again
 #ifdef DEBUG1
